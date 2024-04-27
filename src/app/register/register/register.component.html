@@ -1,0 +1,35 @@
+<form class="main-form" [formGroup]="userForm">
+    <label>First name:</label>
+    <input formControlName="firstName" type="text">
+    <span *ngIf="firstNameCtrl?.touched && firstNameCtrl?.errors?.['required']" class="error-message">ამ ველის შევსება
+        აუცილებელია</span>
+    <span *ngIf="firstNameCtrl?.errors?.['maxlength']" class="error-message">max symbols is 20</span>
+    <label>Last name:</label>
+    <input formControlName="lastName" type="text">
+    <span class="error-message"></span>
+    <label>Username:</label>
+    <input formControlName="userName" type="text">
+    <span class="error-message"></span>
+    <form formGroupName="passwordGroup">
+        <label>Password:</label>
+        <input formControlName="password" type="password">
+        <label>Confrirm password:</label>
+        <input formControlName="confirmPassword" type="password">
+        <span *ngIf="userForm.get('passwordGroup')?.errors?.['mismatch']" class="error-message">პაროლები არ
+            ემთხვევა</span>
+    </form>
+    <label>Email:</label>
+    <input formControlName="email" type="text">
+    <span *ngIf="emailCtrl?.touched && emailCtrl?.errors?.['required']" class="error-message">ამ ველის შევსება
+        აუცილებელია</span>
+    <span *ngIf="emailCtrl?.errors?.['email']" class="error-message">is not email format</span>
+    <label>Age:</label>
+    <input formControlName="age" type="text">
+    <span *ngIf="ageCtrl?.touched && ageCtrl?.errors?.['isNotAdult']" class="error-message">you are not adult</span>
+    <form formGroupName="adress">
+        <label>City: </label>
+        <input formControlName="city" type="text">
+        <label>Street:</label>
+        <input formControlName="street" type="text">
+    </form>
+</form>

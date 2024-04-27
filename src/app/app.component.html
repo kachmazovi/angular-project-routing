@@ -1,0 +1,12 @@
+<nav>
+    <a routerLink="'/login'" routerLinkActive="active">Login</a>
+    <a [routerLink]="['/register', {id: '20'}]" routerLinkActive="active">Register</a>
+    <a [routerLink]="['/dashboard', {id: '30'}]" routerLinkActive="active">dashboard</a>
+</nav>
+
+
+<router-outlet></router-outlet>
+
+<footer>
+    <p>footer works!</p>
+</footer>
