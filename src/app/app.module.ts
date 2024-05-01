@@ -3,10 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginModule } from './login/login.module';
-import { RegisterModule } from './register/register.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-
+import { RegisterModule } from './register/register.module';
+import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,9 +13,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule,
+    DashboardModule,
     RegisterModule,
-    DashboardModule
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

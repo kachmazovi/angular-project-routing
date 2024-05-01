@@ -1,7 +1,7 @@
-<form (submit)="login()">
+<form>
     <label>Username: </label>
     <input [formControl]="userName" class="Username" type="text">
     <label>Password</label>
     <input [formControl]="password" class="password" type="password">
-    <button>Login</button>
 </form>
+<button (click)="login()" [disabled]="userName.invalid || password.invalid">Login</button>

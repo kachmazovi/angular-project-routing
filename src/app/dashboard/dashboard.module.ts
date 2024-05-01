@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ArticleFirstComponent } from './main/article-first/article-first.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,27 @@ import { ArticleFirstComponent } from './main/article-first/article-first.compon
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: DashboardComponent,
+        children: [
+          {
+            path: 'main',
+            component: MainComponent
+          },
+          {
+            path: 'news',
+            component: NewsComponent
+          },
+          {
+            path: 'contact',
+            component: ContactComponent
+          },
+        ]
+      },
+    ])
   ]
 })
 export class DashboardModule { }

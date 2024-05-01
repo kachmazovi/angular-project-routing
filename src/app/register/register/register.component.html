@@ -1,4 +1,4 @@
-<form class="main-form" [formGroup]="userForm">
+<form class="main-form" [formGroup]="userForm" (submit)="registerUser()">
     <label>First name:</label>
     <input formControlName="firstName" type="text">
     <span *ngIf="firstNameCtrl?.touched && firstNameCtrl?.errors?.['required']" class="error-message">ამ ველის შევსება
@@ -26,10 +26,11 @@
     <label>Age:</label>
     <input formControlName="age" type="text">
     <span *ngIf="ageCtrl?.touched && ageCtrl?.errors?.['isNotAdult']" class="error-message">you are not adult</span>
-    <form formGroupName="adress">
+    <form formGroupName="address">
         <label>City: </label>
         <input formControlName="city" type="text">
         <label>Street:</label>
         <input formControlName="street" type="text">
     </form>
+    <button [disabled]="userForm.invalid"> Register </button>
 </form>

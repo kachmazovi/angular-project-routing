@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './register/register/register.component';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { MainComponent } from './dashboard/main/main.component';
-import { NewsComponent } from './dashboard/news/news.component';
-import { ContactComponent } from './dashboard/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -15,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    component: LoginComponent
   },
   {
     path: 'register',
@@ -23,21 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    children: [
-      {
-        path: 'main',
-        component: MainComponent
-      },
-      {
-        path: 'news',
-        component: NewsComponent
-      },
-      {
-        path: 'contact',
-        component: ContactComponent
-      },
-    ]
+    component: DashboardComponent
   },
   {
     path: '**',
@@ -45,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'page-not-found',
-    component: PageNotFoundComponent
+    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)
   }
 ];
 

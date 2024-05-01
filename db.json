@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "id": "2"
+    },
+    {
+      "id": "1a16",
+      "firstName": "jhon",
+      "lastName": "smith",
+      "userName": "jhonsmith",
+      "password": "JhonSmith123",
+      "email": "jhonsmith@mail",
+      "age": "21",
+      "address": {
+        "street": ""
+      }
+    }
+  ]
+}
