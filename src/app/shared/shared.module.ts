@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomDirective } from './custom.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,12 +15,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: PageNotFoundComponent
-      }
-    ])
+    HttpClientModule
   ],
   exports: [
     ReactiveFormsModule,

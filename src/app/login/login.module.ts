@@ -15,7 +15,6 @@ import { LoginRoutingModule } from './login.routing.module';
     CommonModule,
     LoginRoutingModule,
     SharedModule,
-    HttpClientModule
   ]
 })
 export class LoginModule { }
